@@ -9,6 +9,5 @@ async function main() {
 }
 
 cron.schedule("0 5 * * *", function () {
-  console.log("running a task every minute");
   main();
 });
