@@ -1,0 +1,23 @@
+{
+  "name": "prayer-times-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.ts",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.3.4",
+    "node-cron": "^3.0.2",
+    "puppeteer": "^19.7.5"
+  },
+  "devDependencies": {
+    "@types/node-cron": "^3.0.7",
+    "nodemon": "^2.0.21",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.2"
+  }
+}
