@@ -1,8 +1,8 @@
-import * as puppeteer from "puppeteer";
+const puppeteer = require("puppeteer");
 
 const SITE_NAME = "https://islom.uz/";
 
-export const getData = async () => {
+const getData = async () => {
   const browser = await puppeteer.launch({ timeout: 0 });
   const page = await browser.newPage();
   await page.goto(SITE_NAME, {
@@ -30,3 +30,5 @@ export const getData = async () => {
 
   return result;
 };
+
+module.exports = getData;

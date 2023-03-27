@@ -1,11 +1,16 @@
-import cron from "node-cron";
+const cron = require("node-cron");
 
-import { sendMessageToChannel } from "./bot";
-import { getData } from "./getData";
+const { sendMessageToChannel } = require("./bot");
+const { getData } = require("./getData");
 
 async function main() {
-  const data = await getData();
-  await sendMessageToChannel(data);
+  try {
+    const data = await getData();
+    await sendMessageToChannel(data);
+  } catch (error) {
+    console.log("Error: ", error);
+    throw new Error("App failed");
+  }
 }
 
 cron.schedule("0 5 * * *", function () {

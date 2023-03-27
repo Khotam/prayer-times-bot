@@ -1,6 +1,6 @@
-import axios from "axios";
+const axios = require("axios");
 
-export const sendMessageToChannel = async (data) => {
+const sendMessageToChannel = async (data) => {
   const apiToken = "5824412735:AAHhVJNJ29jl_sFuN9m2GAyFgy30Dvxq4LY";
   const chatId = "@namoz_vaqtlari_islomuz";
 
@@ -18,3 +18,5 @@ export const sendMessageToChannel = async (data) => {
   const response = await axios.get(urlString);
   return response;
 };
+
+module.exports = sendMessageToChannel;
