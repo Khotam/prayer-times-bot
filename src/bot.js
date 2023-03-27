@@ -1,7 +1,6 @@
 import axios from "axios";
 
-export const sendMessageToChannel = async (data: Record<string, string>) => {
-  console.log("data", data);
+export const sendMessageToChannel = async (data) => {
   const apiToken = "5824412735:AAHhVJNJ29jl_sFuN9m2GAyFgy30Dvxq4LY";
   const chatId = "@namoz_vaqtlari_islomuz";
 

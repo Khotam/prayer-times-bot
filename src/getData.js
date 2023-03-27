@@ -9,7 +9,7 @@ export const getData = async () => {
     waitUntil: "domcontentloaded",
   });
 
-  const data: Record<string, string[]> = await page.evaluate(() => {
+  const data = await page.evaluate(() => {
     const prayertimeEls = [...document.querySelectorAll(".p_clock > b")];
     const titleEls = [...document.querySelectorAll(".in_cricle > div.p_v")];
 
@@ -23,14 +23,10 @@ export const getData = async () => {
 
   const values = Object.values(data);
 
-  const result = values[0].reduce(
-    (acc: Record<string, string>, curr: string, idx) => {
-      acc[curr] = values[1][idx];
-      return acc;
-    },
-    {}
-  );
+  const result = values[0].reduce((acc, curr, idx) => {
+    acc[curr] = values[1][idx];
+    return acc;
+  }, {});
 
-  console.log("result", result);
   return result;
 };
