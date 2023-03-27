@@ -8,7 +8,7 @@ async function main() {
   await sendMessageToChannel(data);
 }
 
-cron.schedule("* * * * *", function () {
+cron.schedule("0 5 * * *", function () {
   console.log("running a task every minute");
   main();
 });
