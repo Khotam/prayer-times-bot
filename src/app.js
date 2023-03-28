@@ -14,6 +14,6 @@ async function main() {
 }
 
 console.log("App started");
-cron.schedule("0 5 * * *", function () {
+cron.schedule("0 11 * * *", function () {
   main();
 });

@@ -31,4 +31,4 @@ const getData = async () => {
   return result;
 };
 
-module.exports = getData;
+module.exports = { getData };

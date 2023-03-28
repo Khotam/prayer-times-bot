@@ -19,4 +19,4 @@ const sendMessageToChannel = async (data) => {
   return response;
 };
 
-module.exports = sendMessageToChannel;
+module.exports = { sendMessageToChannel };
