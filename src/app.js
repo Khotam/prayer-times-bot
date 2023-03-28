@@ -1,3 +1,4 @@
+const { writeFile } = require("fs").promises;
 const cron = require("node-cron");
 
 const { sendMessageToChannel } = require("./bot");
@@ -9,11 +10,12 @@ async function main() {
     await sendMessageToChannel(data);
   } catch (error) {
     console.log("Error: ", error);
+    await writeFile("./error.log", error.message);
     throw new Error("App failed");
   }
 }
 
 console.log("App started");
-cron.schedule("0 11 * * *", function () {
+cron.schedule("7 11 * * *", function () {
   main();
 });
